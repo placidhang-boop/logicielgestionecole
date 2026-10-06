@@ -6,6 +6,10 @@ import { createAuthRouter } from "./routes/auth.js";
 import { createDashboardRouter } from "./routes/dashboard.js";
 import { createSchoolRouter } from "./routes/school.js";
 import { createPaymentsRouter } from "./routes/payments.js";
+import { createStudentsRouter } from "./routes/students.js";
+import { createCategoriesRouter } from "./routes/categories.js";
+import { createSupportersRouter } from "./routes/supporters.js";
+import { createFeesRouter } from "./routes/fees.js";
 import { env } from "./config/env.js";
 import { prisma } from "./lib/prisma.js";
 
@@ -44,6 +48,10 @@ app.use("/api/auth", createAuthRouter());
 app.use("/api/dashboard", createDashboardRouter());
 app.use("/api/school", createSchoolRouter());
 app.use("/api/payments", createPaymentsRouter());
+app.use("/api/students", createStudentsRouter());
+app.use("/api/categories", createCategoriesRouter());
+app.use("/api/supporters", createSupportersRouter());
+app.use("/api/fees", createFeesRouter());
 
 app.use((error: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(error);
