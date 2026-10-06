@@ -113,7 +113,7 @@ export default function App() {
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
                 <input
-                  className="w-52 rounded-xl border border-[var(--line)] bg-[var(--panel-alt)] py-2 pl-9 pr-3 text-sm outline-none ring-0 placeholder:text-slate-400"
+                  className="w-52 rounded-xl border border-[var(--line)] bg-[var(--panel-alt)] py-2 pl-9 pr-3 text-sm outline-none placeholder:text-slate-400"
                   placeholder="Rechercher..."
                 />
               </div>
@@ -143,9 +143,7 @@ export default function App() {
                     item.tone === "blue" ? "bg-blue-100 text-blue-700" :
                     item.tone === "green" ? "bg-emerald-100 text-emerald-700" :
                     item.tone === "red" ? "bg-red-100 text-red-700" : "bg-amber-100 text-amber-700"
-                  }`}>
-                    {item.change}
-                  </div>
+                  }`}>{item.change}</div>
                 </div>
                 <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
                   <ArrowUpRight size={14} />
@@ -158,7 +156,7 @@ export default function App() {
           <section className="mt-6 grid gap-6 xl:grid-cols-[2fr_1fr]">
             <div className="card rounded-3xl p-5">
               <div className="mb-5 flex items-center justify-between">
-                <h3 className="text-lg font-semibold">Receipts et dépenses</h3>
+                <h3 className="text-lg font-semibold">Recettes et dépenses</h3>
                 <span className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600">Mois</span>
               </div>
 
@@ -166,9 +164,7 @@ export default function App() {
                 {[30, 45, 70, 52, 90, 64, 110, 98, 130, 118, 140, 160].map((height, index) => (
                   <div key={index} className="flex flex-col items-center gap-2">
                     <div
-                      className={`w-full rounded-t-2xl ${
-                        index % 2 === 0 ? "bg-blue-500" : "bg-emerald-500"
-                      }`}
+                      className={`w-full rounded-t-2xl ${index % 2 === 0 ? "bg-blue-500" : "bg-emerald-500"}`}
                       style={{ height: `${height}px` }}
                     />
                     <span className="text-[10px] text-slate-400">{index + 1}</span>
